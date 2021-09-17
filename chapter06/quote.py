@@ -20,5 +20,12 @@ quote = soup.find_all('span')
 print(quote[0].text)
 
 # 반복문을 이용해 찾은 태그들의 텍스트 전부 출력. 
-for i in quote:
+# for i in quote:
+#   print(i.text)
+
+# <div> 태그 안 class가 quote일 때 텍스트만 
+# print(soup.find_all('div', {"class" : "quote"})[0].text)
+
+# <div> 태그안 class가 quote일때 텍스트 전부 추출
+for i in soup.find_all('div', {"class":"quote"}):
     print(i.text)
